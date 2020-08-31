@@ -9,11 +9,13 @@ namespace Homework2.Controllers
 {
     public class Order : Controller
     {
-        [Route("/Order/Index", Name = "Order")]
         public IActionResult Index()
         {
-            var fullname = HttpContext.Request.Form["name"].ToString();
-            ViewBag.name = fullname;
+            return View();
+        }
+
+        public IActionResult list()
+        {
 
             var game = ("Far Cry 5", "Gta 5", "Dota 2", "Valorant", "Monter Hunter World", "Assassin's Creed",
                 "Tom Clancys", "Doom", "Division", "Bettlefield", "Just Cause", "Fall Guys", "Watch Dogs2",
@@ -50,10 +52,8 @@ namespace Homework2.Controllers
             ViewData["price13"] = price.Item13;
             ViewData["price14"] = price.Item14;
             ViewData["price15"] = price.Item15;
-
             return View();
         }
-
         public IActionResult Login()
         {
             return View();

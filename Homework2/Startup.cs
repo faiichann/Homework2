@@ -50,7 +50,7 @@ namespace Homework2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Order}/{action=Login}/{id?}");
+                    pattern: "{controller=Order}/{action=Index}/{id?}");
             });
         }
     }
