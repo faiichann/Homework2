@@ -18,7 +18,7 @@ namespace Homework2.Controllers
         {
             var listgame = new List<ListData>();
             listgame.Add(new ListData { game = "Far Cry 5", price = 620 ,url= "https://www.gamesrig.com/img/index/far-cry-5-cover.jpg" });
-            listgame.Add(new ListData { game = "Gta 5", price = 550 , url= "https://www.gamesrig.com/img/index/grand-theft-auto-v-cover.jpg" });
+            listgame.Add(new ListData { game = "Gta V", price = 550 , url= "https://www.gamesrig.com/img/index/grand-theft-auto-v-cover.jpg" });
             listgame.Add(new ListData { game = "Dota 2", price = 360  ,url = "https://www.gamesrig.com/img/index/watch-dogs-2-cover.jpg" });
             listgame.Add(new ListData { game = "Valorant", price = 130, url = "https://cdn.game.tv/game-tv-content/images_3/07e71c74484a1cedd92dbc35fa0c0304/GameTile.jpg" });
             listgame.Add(new ListData { game = "Monter Hunter World", price = 480, url = "https://www.gamesrig.com/img/index/monster-hunter-world-cover.jpg" });
@@ -42,14 +42,28 @@ namespace Homework2.Controllers
         [HttpPost]
         public IActionResult Buy()
         {
-            var game = HttpContext.Request.Form["game"].ToString();
-            int Q = Convert.ToInt32(HttpContext.Request.Form["qty"].ToString());
-            int P = Convert.ToInt32(HttpContext.Request.Form["pri"].ToString());
-            int sum = Q * P;
-            ViewBag.qty = Q.ToString();
-            ViewBag.pri = P.ToString();
+            int A = Convert.ToInt32(HttpContext.Request.Form["a"].ToString());
+            int B = Convert.ToInt32(HttpContext.Request.Form["b"].ToString());
+            int C = Convert.ToInt32(HttpContext.Request.Form["c"].ToString());
+            int D = Convert.ToInt32(HttpContext.Request.Form["d"].ToString());
+            int E = Convert.ToInt32(HttpContext.Request.Form["e"].ToString());
+            int F = Convert.ToInt32(HttpContext.Request.Form["f"].ToString());
+            int G = Convert.ToInt32(HttpContext.Request.Form["g"].ToString());
+            int H = Convert.ToInt32(HttpContext.Request.Form["h"].ToString());
+            int I = Convert.ToInt32(HttpContext.Request.Form["i"].ToString());
+            int J = Convert.ToInt32(HttpContext.Request.Form["j"].ToString());
+            int K = Convert.ToInt32(HttpContext.Request.Form["k"].ToString());
+            int L = Convert.ToInt32(HttpContext.Request.Form["l"].ToString());
+            int M = Convert.ToInt32(HttpContext.Request.Form["m"].ToString());
+            int N = Convert.ToInt32(HttpContext.Request.Form["n"].ToString());
+            int O = Convert.ToInt32(HttpContext.Request.Form["o"].ToString());
+
+            var game = HttpContext.Request.Form["name"].ToString();
+            int sum = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O;
+            int P = (A*620)+(B*550)+(C*360)+(D*130)+(E*480)+(F*510)+(G*610)+(H*220)+(I*145)+(J*310)+(K*210)+(L*510)+(M*650)+(N*430)+(O*220);
+            ViewBag.qty = sum.ToString();
             ViewBag.namegame = game;
-            ViewBag.total = sum.ToString();
+            ViewBag.total = P.ToString();
             return View("order");
         }
         public IActionResult Getname()
