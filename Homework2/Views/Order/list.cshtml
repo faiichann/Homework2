@@ -4,7 +4,7 @@
 }
 <div method="post" asp-controller="Order" asp-action="Index">
     <div class="text-center">
-        <h1 class="display-2 mb-4 p-3 mb-2 bg-info text-white">Welcome to my store</h1>
+        <h1 class="display-2 mb-4 p-3 mb-2 bg-warning text-white">Welcome to my store</h1>
     </div>
 </div>
 
@@ -13,13 +13,13 @@
     {
     <div class="card" style="width: 320px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin:10px; text-align:center;">
         <img src="@item.url" class="card-img-top img-fluid" alt="...">
-        <div class="card-body">
-            <h2 class="card-title">@item.game</h2>
-            <h4 class="card-text">@item.price ฿</h4>
-            <p class="card-text">This is a interesting game Multi player and use skill very much.</p>
+        <div class="card-body bg-dark">
+            <h2 class="card-title text-white">@item.game</h2>
+            <h4 class="card-text text-white">@item.price ฿</h4>
+            <p class="card-text text-white">This is a interesting game Multi player and use skill very much.</p>
         </div>
-        <div class="card-footer" style="background-color:antiquewhite">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="order"><h2 style="color:crimson">ซื้อเลย!!</h2></a>
+        <div class="card-footer p-0" style="background-color:#FF9900" style="background-color:antiquewhite">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="order"><h2 style="color:crimson">Buy!!</h2></a>
         </div>
     </div>
     }
