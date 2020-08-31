@@ -10,5 +10,6 @@ namespace Homework2.Models
     {
         public string game { get; set; }
         public int price { get; set; }
+        public string url { get; set; }
     }
 }

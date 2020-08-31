@@ -16,47 +16,23 @@ namespace Homework2.Controllers
 
         public IActionResult list()
         {
-
-            var game = ("Far Cry 5", "Gta 5", "Dota 2", "Valorant", "Monter Hunter World", "Assassin's Creed",
-                "Tom Clancys", "Doom", "Division", "Bettlefield", "Just Cause", "Fall Guys", "Watch Dogs2",
-                "Over Wacth", "Devil Maycry5");
-            ViewData["game1"] = game.Item1;
-            ViewData["game2"] = game.Item2;
-            ViewData["game3"] = game.Item3;
-            ViewData["game4"] = game.Item4;
-            ViewData["game5"] = game.Item5;
-            ViewData["game6"] = game.Item6;
-            ViewData["game7"] = game.Item7;
-            ViewData["game8"] = game.Item8;
-            ViewData["game9"] = game.Item9;
-            ViewData["game10"] = game.Item10;
-            ViewData["game11"] = game.Item11;
-            ViewData["game12"] = game.Item12;
-            ViewData["game13"] = game.Item13;
-            ViewData["game14"] = game.Item14;
-            ViewData["game15"] = game.Item15;
-
-            var price = ("620", "550", "360", "130", "480", "510", "610", "220", "145", "310", "210", "510", "650", "430", "220");
-            ViewData["price1"] = price.Item1;
-            ViewData["price2"] = price.Item2;
-            ViewData["price3"] = price.Item3;
-            ViewData["price4"] = price.Item4;
-            ViewData["price5"] = price.Item5;
-            ViewData["price6"] = price.Item6;
-            ViewData["price7"] = price.Item7;
-            ViewData["price8"] = price.Item8;
-            ViewData["price9"] = price.Item9;
-            ViewData["price10"] = price.Item10;
-            ViewData["price11"] = price.Item11;
-            ViewData["price12"] = price.Item12;
-            ViewData["price13"] = price.Item13;
-            ViewData["price14"] = price.Item14;
-            ViewData["price15"] = price.Item15;
-            return View();
-        }
-        public IActionResult Login()
-        {
-            return View();
+            var listgame = new List<ListData>();
+            listgame.Add(new ListData { game = "Far Cry 5", price = 620 ,url= "https://www.gamesrig.com/img/index/far-cry-5-cover.jpg" });
+            listgame.Add(new ListData { game = "Gta 5", price = 550 , url= "https://www.gamesrig.com/img/index/grand-theft-auto-v-cover.jpg" });
+            listgame.Add(new ListData { game = "Dota 2", price = 360  ,url = "https://www.gamesrig.com/img/index/watch-dogs-2-cover.jpg" });
+            listgame.Add(new ListData { game = "Valorant", price = 130, url = "https://cdn.game.tv/game-tv-content/images_3/07e71c74484a1cedd92dbc35fa0c0304/GameTile.jpg" });
+            listgame.Add(new ListData { game = "Monter Hunter World", price = 480, url = "https://www.gamesrig.com/img/index/monster-hunter-world-cover.jpg" });
+            listgame.Add(new ListData { game = "Assassin's Creed", price = 510, url = "https://www.gamesrig.com/img/index/tom-clancys-ghost-recon-wildlands-cover.jpg" });
+            listgame.Add(new ListData { game = "Tom Clancys", price = 610, url = "https://www.gamesrig.com/img/index/tom-clancys-the-division-cover.jpg" });
+            listgame.Add(new ListData { game = "Doom", price = 220, url = "https://www.gamesrig.com/img/index/doom-cover.jpg" });
+            listgame.Add(new ListData { game = "Division", price = 145, url = "https://www.gamesrig.com/img/index/battlefield-1-premium-pass-cover.jpg" });
+            listgame.Add(new ListData { game = "Bettlefield", price = 310, url = "https://www.gamesrig.com/img/index/just-cause-4-cover.jpg" });
+            listgame.Add(new ListData { game = "Just Cause", price = 210, url = "https://media.playstation.com/is/image/SCEA/fall-guys-ultimate-knockout-boxart-01-ps4-23jun20-en-hk?$native_nt$" });
+            listgame.Add(new ListData { game = "Fall Guys", price = 510, url = "https://www.gamesrig.com/img/index/overwatch-legendary-edition-cover.jpg" });
+            listgame.Add(new ListData { game = "Watch Dogs2", price = 650, url = "https://th-test-11.slatic.net/p/474b0fd02c735df50b5fbec4dd30cbf0.jpg" });
+            listgame.Add(new ListData { game = "Over Wacth", price = 430, url = "https://images-na.ssl-images-amazon.com/images/I/71cTCvSFJTL._SY500_.jpg" });
+            listgame.Add(new ListData { game = "Devil Maycry5", price = 220, url = "https://upload.wikimedia.org/wikipedia/ru/thumb/8/8e/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg/266px-%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_Dota_2.jpg" });
+            return View(listgame.ToList());
         }
         public IActionResult order()
         {
@@ -80,7 +56,7 @@ namespace Homework2.Controllers
         {
             var fullname = HttpContext.Request.Form["name"].ToString();
             ViewBag.name = fullname;
-            return View("Login", "Index");
+            return View("Index");
         }
     }
 }

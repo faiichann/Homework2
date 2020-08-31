@@ -3,8 +3,16 @@
 *@
 @{
 }
-<div method="post" asp-controller="Order" asp-action="Index">
+<div>
     <div class="text-center">
-        <h1 class="display-2 mb-4 p-3 mb-2 bg-info text-white">Welcome:@ViewBag.name</h1>
+        <h1 class="display-2 mb-4 p-3 mb-2 badge-dark text-white">Game Hub</h1>
+
+        <div class="jumbotron" style="background-color:goldenrod;margin-top:50Px ;color:aliceblue";box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)>
+            <h1 class="display-4">Welcome to Game Store </h1>
+            <p class="lead">This is a Famouse website for buy game , We have a lot of game and new to you if you have money let buy it and play with your friends.</p>
+            <hr class="my-4">
+            <p>We wish you guy pay a lot of money for Our store.</p>
+            <a class="btn btn-dark btn-lg" role="button" asp-area="" asp-controller="Order" asp-action="list">Shop!!!!</a>
+        </div>
     </div>
 </div>
